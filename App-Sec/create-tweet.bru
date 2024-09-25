@@ -1,0 +1,21 @@
+meta {
+  name: create-tweet
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/tweets
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "content" : "Teste tweet admin, agora correto"
+  }
+}
